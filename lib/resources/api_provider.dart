@@ -1,17 +1,30 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:SteveBrains/Mysql1/connection.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../models/category.dart';
+import '../models/question.dart';
 
-import 'package:opentrivia/models/category.dart';
-import 'package:opentrivia/models/question.dart';
-
-const String baseUrl = "https://opentdb.com/api.php";
-
-Future<List<Question>> getQuestions(Category category, int total, String difficulty) async {
-  String url = "$baseUrl?amount=$total&category=${category.id}";
-  if(difficulty != null) {
-    url = "$url&difficulty=$difficulty";
+// var db = new Mysql();
+String _level;
+Future<List<Question>> getQuestions(Category category) async {
+  List<Question> list = List();
+  List<Question> list2 = List();
+  _level = category.level;
+  try {
+    final levelReference = Firestore.instance.collection("AllLevels");
+    QuerySnapshot documentSnapshot = await levelReference
+        .document("M5xgqSw5RA2VaBkQEP5N")
+        .collection("Level-" + _level)
+        .getDocuments();
+    documentSnapshot.documents.forEach((e) {
+      Question levelP = Question.fromMap(e.data);
+      list.add(levelP);
+    });
+  } catch (e) {}
+  for (var i = 1; i <= 15; i++) {
+    list2.add(list[i]);
   }
-  http.Response res = await http.get(url);
-  List<Map<String, dynamic>> questions = List<Map<String,dynamic>>.from(json.decode(res.body)["results"]);
-  return Question.fromData(questions);
+  list2.shuffle();
+  print(list.length);
+  print(list2.length);
+  return list2;
 }

@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "541214046935",
+    "firebase_url": "https://math-crush-e3ec2.firebaseio.com",
+    "project_id": "math-crush-e3ec2",
+    "storage_bucket": "math-crush-e3ec2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541214046935:android:a82b88f8eb8f4dbb8e0e92",
+        "android_client_info": {
+          "package_name": "com.example.math_helper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDax3h2Pb9OOaX1lsOlC09bA9-Galh23YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541214046935:android:db12879902f97e238e0e92",
+        "android_client_info": {
+          "package_name": "com.stevebrains.mathcrush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541214046935-alofuihqnbqa43ho4oid66ole4n2sh9k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stevebrains.mathcrush",
+            "certificate_hash": "9cf80271048d2831e1c4a911ebb76a9163345b45"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDax3h2Pb9OOaX1lsOlC09bA9-Galh23YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
